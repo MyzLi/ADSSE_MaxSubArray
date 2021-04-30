@@ -11,7 +11,7 @@ A = data[0] #10000 Entries
 B = data[1] #5000 Entries
 C = data[2] #1000 Entries
 #Change active array to A B or C to change for both algorithms
-ACTIVE_ARRAY = A
+ACTIVE_ARRAY = C
 
 #Kadanes Algorithm - the alleged best way to find maximum contiguous subarray
 def kadaneAlg(given_array):
@@ -61,6 +61,7 @@ def divAndConqMiddle(given_array, lowest, middle, highest):
 
 def divAndConq(given_array, lowest, highest):
     
+    #Catcher to stop infinite recursion
     if highest == lowest:
         return given_array[lowest]
 
@@ -84,8 +85,8 @@ end_time = time.time()
 elapsed_time = (end_time-start_time)*1000
 print("With a running time of: " , f'{elapsed_time:.9f}',"ms")
 
-start_time = time.time()
+start_time2 = time.time()
 print("Maximum contiguous subarray total for A, according to Divide-And-Conquer, is:", divAndConq(ACTIVE_ARRAY, 0, len(ACTIVE_ARRAY)-1))
-end_time = time.time()
-elapsed_time = (end_time-start_time)*1000
-print("With a running time of: " , f'{elapsed_time:.9f}',"ms")
+end_time2 = time.time()
+elapsed_time2 = (end_time2-start_time2)*1000
+print("With a running time of: " , f'{elapsed_time2:.9f}',"ms")
